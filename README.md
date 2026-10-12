@@ -10,7 +10,7 @@ motor temperature / vibration / RPM, tire pressure, brake pad wear, distance, et
 The file is one vehicle's history (175,393 rows). We split it into **50 slices = 50 vehicles** (SDV-001 to SDV-050).
 Each vehicle's current state is the last row of its slice, and its 7-day history is one reading per day.
 
-### Why we made our own labels (say this in the viva)
+### Why we made our own labels
 We trained XGBoost on the dataset's original labels (Failure_Probability, RUL). It scored **AUC about 0.5, which is random guessing**,
 so those labels have no relation to the sensors. Instead we wrote simple engineering rules (`ml.py`, `RULES`):
 low battery SoH, low voltage, high battery/motor temperature, high vibration, low tire pressure, worn brakes, high RPM.
