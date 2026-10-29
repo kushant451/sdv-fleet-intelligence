@@ -1,4 +1,4 @@
-"""Step 2: split the dataset into 50 vehicles, score them, store them. Run: python seed.py"""
+
 import numpy as np, pandas as pd
 import ml, db
 
