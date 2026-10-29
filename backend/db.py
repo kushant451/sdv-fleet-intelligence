@@ -1,5 +1,4 @@
-"""Uses MongoDB Atlas if MONGO_URI is set in .env, otherwise a local JSON file
-(so the project still runs on your laptop without internet)."""
+
 import os, json
 from dotenv import load_dotenv
 load_dotenv()

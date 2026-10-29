@@ -1,4 +1,4 @@
-"""Step 3: the API. Run:  uvicorn main:app --reload"""
+
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware

@@ -4,8 +4,8 @@ import ml, db
 
 raw = pd.read_csv(ml.CSV, parse_dates=["Timestamp"])
 N = 50
-size = len(raw) // N            # each vehicle gets its own slice of the data
-DAY = 96                        # 96 rows x 15 min = 1 day
+size = len(raw) // N            
+DAY = 96                       
 
 vehicles, daily = [], []
 for i in range(N):
@@ -30,7 +30,6 @@ for i in range(N):
         "history": [{"day": f"Day {k + 1}", "health": x["health_score"]} for k, x in enumerate(res)],
         **r})
 
-# Priority 1 = needs maintenance first
 RANK = {"Critical": 0, "At Risk": 1, "Healthy": 2}
 for pr, v in enumerate(sorted(vehicles, key=lambda v: (RANK[v["status"]], v["health_score"], -v["failure_probability"])), 1):
     v["priority"] = pr

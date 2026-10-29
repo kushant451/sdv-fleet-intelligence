@@ -21,9 +21,9 @@ RULES = {
     "Brake_Pad_Wear":      (lambda x: (x - 0.6) / 0.4,    0.07, "Worn brake pads"),
     "Motor_RPM":           (lambda x: (x - 4500) / 1500,  0.05, "High motor RPM"),
 }
-SCALE = 1.8          # makes the rules a bit stricter
-MAX_RUL = 300        # cycles
-CRITICAL_BELOW = 50  # health score
+SCALE = 1.8          
+MAX_RUL = 300        
+CRITICAL_BELOW = 50  
 HEALTHY_FROM = 75
 
 
