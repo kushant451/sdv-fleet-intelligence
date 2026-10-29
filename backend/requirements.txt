@@ -1,9 +1,9 @@
 fastapi
 uvicorn
-pandas
-numpy
-scikit-learn
-xgboost
-joblib
+pandas==3.0.3
+numpy==2.4.6
+scikit-learn==1.9.0
+xgboost==3.4.1
+joblib==1.5.3
 pymongo
 python-dotenv

@@ -141,7 +141,10 @@ function Alerts({ vehicles, onPick }) {
       <h3>Alerts ({bad.length})</h3>
       {bad.map((v) => (
         <div key={v.id} className={"alert " + v.status.replace(" ", "").toLowerCase()} onClick={() => onPick(v)}>
-          <b>{v.id}</b> is <b>{v.status}</b> with {v.failure_probability}% failure probability.
+          <b>{v.id}</b> is <b>{v.status}</b>
+          {v.status === "Critical"
+            ? <> with {v.failure_probability}% failure probability (health {v.health_score}%).</>
+            : <> - health {v.health_score}%, about {v.rul} cycles of life left.</>}
           {v.factors.length > 0 && <> Main factors: {v.factors.join(", ")}.</>}
         </div>
       ))}

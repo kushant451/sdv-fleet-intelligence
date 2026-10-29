@@ -31,7 +31,8 @@ for i in range(N):
         **r})
 
 # Priority 1 = needs maintenance first
-for pr, v in enumerate(sorted(vehicles, key=lambda v: (-v["failure_probability"], v["health_score"])), 1):
+RANK = {"Critical": 0, "At Risk": 1, "Healthy": 2}
+for pr, v in enumerate(sorted(vehicles, key=lambda v: (RANK[v["status"]], v["health_score"], -v["failure_probability"])), 1):
     v["priority"] = pr
 
 trend = [{"day": f"Day {k + 1}", **{s: sum(d[k] == s for d in daily) for s in ["Healthy", "At Risk", "Critical"]}}
