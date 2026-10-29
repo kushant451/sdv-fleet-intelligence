@@ -49,7 +49,7 @@ XGBoost learns these labels from the sensors. Isolation Forest needs no labels a
 | At Risk | 50 to 74 |
 | Critical | below 50 |
 
-Priority 1 = needs maintenance first (sorted by failure probability, then lowest health). "Predicted failures" counts vehicles with failure probability of 50% or more. This comes from the classifier, while Critical comes from the RUL model's health score, so the two numbers can differ slightly.
+Priority 1 = needs maintenance first (sorted by status first: Critical, then At Risk, then Healthy, and then by lowest health). "Predicted failures" counts vehicles with failure probability of 50% or more. This comes from the classifier, while Critical comes from the RUL model's health score, so the two numbers can differ slightly.
 
 ## Project structure
 ```
